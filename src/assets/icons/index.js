@@ -10,7 +10,6 @@ import mui from './mui.svg'
 import nextjs from './nextjs.svg'
 import nodejs from './nodejs.svg';
 import emailjs from './emailjs.png';
-import docker from './docker.png';
 import mysql from './mysql.png';
 import java from './java.png';
 import dsa from './dsa.png';
@@ -22,7 +21,6 @@ import typescript from './typescript.svg'
 import linkedin from './linkedin.svg'
 import twitter from './twitter.svg';
 import drag_animation from './drag_animation.svg';
-import estate from './estate.svg'
 import eshop from './eshop1.png'
 import movieticket from './movie_ticket.png'
 import jobportal from './jobportal.png'
@@ -54,14 +52,12 @@ export {
     typescript,
     linkedin,
     twitter,
-    estate,
     movieticket,
     jobportal,
     snapgram,
     summiz,
     threads,
     arrow,
-    docker,
     mysql,
     java,
     dsa,
