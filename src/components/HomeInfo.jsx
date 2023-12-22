@@ -2,16 +2,26 @@ import { Link } from "react-router-dom";
 const icons = import("../assets/icons");
 
 const arrowIcon = await icons.then((module) => module.arrow);
-const dragAnimationIcon = await icons.then((module) => module.drag_animation);
+// const dragAnimationIcon = await icons.then((module) => module.drag_animation);
 
-const HomeInfo = ({ currentStage }) => {
-  if (currentStage === 1)
+const HomeInfo = ({ currentStage, showGuide }) => {
+  if (currentStage === 1 && !showGuide) {
     return (
-      <span className='flex flex-col justify-center items-center sm:leading-snug '>
-        <img src={dragAnimationIcon} className="w-20" />
-        <span className='uppercase sm:text-[18px] text-[16px] font-semibold m-2 text-black'>Drag to explore</span>
-      </span>
+      <div className='details-box'>
+        <p className='font-medium sm:text-[18px] text-[16px] text-center'>
+          Hi, I'm Narendra Wadhwa <br/> A Fresher Full Stack Developer
+        </p>
+      </div>
     );
+  }
+
+  // if (currentStage === 1)
+  //   return (
+  //     <span className='flex flex-col justify-center items-center sm:leading-snug '>
+  //       <img src={dragAnimationIcon} className="w-20" />
+  //       <span className='uppercase sm:text-[18px] text-[16px] font-semibold m-2 text-black'>Drag to explore</span>
+  //     </span>
+  //   );
   if (currentStage === 2) {
     return (
       <div className='details-box'>
