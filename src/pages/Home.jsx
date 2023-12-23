@@ -8,13 +8,13 @@ import Sky from '../models/Sky';
 import HomeInfo from "../components/HomeInfo";
 import Welcome from "../components/Welcome";  
 const images = import("../assets/images");
-const arrowleft = await images.then((module) => module.arrowleft);
+// const arrowleft = await images.then((module) => module.arrowleft);
 
 import { OrbitControls } from "@react-three/drei";
 
 import sakura from '../assets/sakura.mp3';
 import { soundoff, soundon } from "../assets/icons";
-import { arrowright, arrows } from "../assets/images";
+import { arrows } from "../assets/images";
 
 const icons = import("../assets/icons");
 const dragAnimationIcon = await icons.then((module) => module.drag_animation);
@@ -29,7 +29,7 @@ const Home = () => {
   // const [showWelcome, setShowWelcome] = useState(true); 
   const [showGuide, setShowGuide] = useState(true);
   const [guideStep, setGuideStep] = useState(1);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
 
 
   const handleNextStep = () => {
@@ -100,7 +100,7 @@ const Home = () => {
   
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center text-center">
-      <div className="bg-white p-4 rounded-lg flex flex-col justify-between sm:w-[450px] w-[350px] bg-opacity-95">
+      <div className="bg-white p-6 rounded-lg flex flex-col justify-between sm:min-w-[450px] max-w-[320px] bg-opacity-95">
           {guideStep === 1 && 
           <>
           <p className="font-semibold mb-3">
@@ -112,7 +112,7 @@ const Home = () => {
 <img src={arrowright} className="w-10 ml-1" /> */}
 <img src={arrows} alt="" className="w-32" />
 </span>
-<p> Drag or use arrow left and right buttons to rotate the island.</p>
+<p className="mt-3 mb-1 sm:text-[20px] text-[16px]"> Drag or press arrow left/right buttons to explore.</p>
 </>
 }
           {guideStep === 2 && <p>
@@ -124,7 +124,7 @@ const Home = () => {
             <div>
             <button
               onClick={handlePrevStep}
-                  className="text-blue-500 px-4 py-2 "
+                  className="text-blue-500 p-1"
               disabled={guideStep === 1}
             >
               Prev
@@ -137,7 +137,7 @@ const Home = () => {
               ) : (
                 <button
                   onClick={handleNextStep}
-                  className="text-blue-500 px-4 py-2 "
+                  className="text-blue-500 px-4 py-1"
                 >
                   Next
                 </button>
@@ -211,7 +211,7 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
-      <div className="absolute bottom-2 left-2">
+      <div className="absolute sm:bottom-8 bottom-20 left-8">
         <img src={isPlayingMusic ? soundon : soundoff} alt="sound"
         className="w-10 h-10 cursor-pointer object-contain"
         onClick={()=>setIsPlayingMusic(!isPlayingMusic)} />

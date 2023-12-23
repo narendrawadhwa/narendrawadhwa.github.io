@@ -149,6 +149,7 @@ export const experiences = [
       ],
     },
   ];
+  
 export const socialLinks = [
     {
         name: 'Contact',

@@ -1,15 +1,19 @@
 import { Link } from "react-router-dom";
 const icons = import("../assets/icons");
+const images = import("../assets/images");
 
 const arrowIcon = await icons.then((module) => module.arrow);
+const wavinghand = await images.then((module) => module.wavinghand);
+
 // const dragAnimationIcon = await icons.then((module) => module.drag_animation);
 
 const HomeInfo = ({ currentStage, showGuide }) => {
   if (currentStage === 1 && !showGuide) {
     return (
       <div className='details-box'>
-        <p className='font-medium sm:text-[18px] text-[16px] text-center'>
-          Hi, I'm Narendra Wadhwa <br/> A Fresher Full Stack Developer
+        <p className='font-medium sm:text-[18px] text-[14px] text-center'>
+          <span className="flex flex-row">  Hi<img src={wavinghand} alt="" className="w-6" />, I'm Narendra Wadhwa</span>
+          <span> {" "}A Fresher Full Stack Developer</span> 
         </p>
       </div>
     );
@@ -19,13 +23,13 @@ const HomeInfo = ({ currentStage, showGuide }) => {
   //   return (
   //     <span className='flex flex-col justify-center items-center sm:leading-snug '>
   //       <img src={dragAnimationIcon} className="w-20" />
-  //       <span className='uppercase sm:text-[18px] text-[16px] font-semibold m-2 text-black'>Drag to explore</span>
+  //       <span className='uppercase sm:text-[18px] text-[14px] font-semibold m-2 text-black'>Drag to explore</span>
   //     </span>
   //   );
   if (currentStage === 2) {
     return (
       <div className='details-box'>
-        <p className='font-medium sm:text-[18px] text-[16px] text-center'>
+        <p className='font-medium sm:text-[18px] text-[14px] text-center'>
           My journey as a developer started in SYJC, where I came across Web Designing using HTML and CSS.
         </p>
       </div>
@@ -34,7 +38,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
   if (currentStage === 3) {
     return (
       <div className='details-box'>
-        <p className='font-medium sm:text-[18px] text-[16px] text-center'>
+        <p className='font-medium sm:text-[18px] text-[14px] text-center'>
           Continuing with my bachelor's, I decided to enroll in the Full Stack Development program.
         </p>
       </div>
@@ -43,7 +47,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
   if (currentStage === 4) {
     return (
       <div className='info-box'>
-        <p className='font-medium text-center sm:text-[18px] text-[16px]'>
+        <p className='font-medium text-center sm:text-[18px] text-[14px]'>
           During the program i worked on three projects using various technologies.</p>
 
         <Link to='/projects' className='neo-brutalism-white neo-btn'>
@@ -70,7 +74,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
   if (currentStage === 6) {
     return (
       <div className='info-box'>
-        <p className='font-medium sm:text-[18px] text-[16px] text-center'>
+        <p className='font-medium sm:text-[18px] text-[14px] text-center'>
           I interned at CodSoft as a Web Development Intern, worked on two  projects gaining hands-on experience</p>
 
         <Link to='/projects' className='neo-brutalism-white neo-btn'>
@@ -84,7 +88,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
   if (currentStage === 7) {
     return (
       <div className='info-box'>
-        <p className='font-medium sm:text-[18px] text-[16px] text-center'>
+        <p className='font-medium sm:text-[18px] text-[14px] text-center'>
           Currently seeking opportunities while enhancing my skills in AWS and Docker.
           <Link to='https://drive.google.com/file/d/18LYq_vNK6uxiLQ99plZjvjz7oqP528t4/view?usp=drive_link' className='neo-brutalism-white neo-btn' target='_blank'>
             View Resume
@@ -97,7 +101,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
   if (currentStage === 8) {
     return (
       <div className='info-box'>
-        <p className='font-medium  sm:text-[18px] text-[16px] text-center'>
+        <p className='font-medium  sm:text-[18px] text-[14px] text-center'>
           Need a project done or looking for a dev?  I'm just a few keystrokes away
         </p>
 
