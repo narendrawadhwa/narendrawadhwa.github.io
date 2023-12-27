@@ -5,7 +5,8 @@ import inderdeep from './inderdeep.png'
 // import arrowleft from './arrow_left.png'
 // import arrowright from './arrow_right.png';
 import arrows from './arrows.gif';
-import wavinghand from './waving_hand.gif'
+import wavinghand from './waving_hand.gif';
+import clickLink from './click_link.gif'
 
 export {
     logo,
@@ -14,5 +15,6 @@ export {
     // arrowleft,
     // arrowright,
     arrows,
-    wavinghand
+    wavinghand,
+    clickLink
 }

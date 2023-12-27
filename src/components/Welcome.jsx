@@ -1,42 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import { FaArrowRight } from 'react-icons/fa';
+import {arrows, clickLink} from '../assets/images';
+import { drag_animation } from '../assets/icons';
 
-const Welcome = ({ onExploreClick }) => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
+const Welcome = ({ showWelcome, handlePrevStep, handleNextStep, handleSkip, isLastStep, guideStep }) => {
+  const renderGuideModal = () => {
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center text-center">
+        <div className="bg-white p-6 rounded-lg flex flex-col justify-between sm:min-w-[450px] max-w-[320px] bg-opacity-95">
+          {guideStep === 1 && (
+            <>
+              <p className="font-semibold mb-3">Step 1</p>
+              <span className="flex flex-row items-center justify-center">
+                <img src={drag_animation} className="w-20 mr-2" /> <p>OR</p> 
+                <img src={arrows} alt="" className="w-32" />
+              </span>
+              <p className="mt-3 mb-1 sm:text-[20px] text-[16px]"> Drag or use left/right arrow buttons to navigate.</p>
+            </>
+          )}
+          {guideStep === 2 && (
+            <>
+              <p className="font-semibold mb-3">Step 2</p>
+              <span className="flex flex-row items-center justify-center">
+                <img src={clickLink} alt="" className="w-12" />
+              </span>
+              <p className="mt-3 mb-1 sm:text-[19px] text-[15px]"> Click hyperlinks for education certificates, projects, contact, and more.</p>
+            </>
+          )}
+          <div className="flex justify-between mt-4">
+            <div>
+              <button
+                onClick={handlePrevStep}
+                className="text-blue-500 p-1"
+                disabled={guideStep === 1}
+              >
+                Prev
+              </button>
+              {isLastStep ? (
+                <button onClick={handleSkip} className="text-gray-500 px-4  py-1">
+                  Close
+                </button>
+              ) : (
+                <button
+                  onClick={handleNextStep}
+                  className="text-blue-500 px-4 py-1"
+                >
+                  Next
+                </button>
+              )}
+            </div>
+            {!isLastStep && (
+              <button onClick={handleSkip} className="text-gray-500 mr-2 ">
+                Skip
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  };
 
   return (
-    <div className='bg-black lg:px-28 px-8 lg:py-24 pt-4 pb-8 z-50 relative text-white welcome-content min-h-screen'>
-      <h1 className='uppercase sm:text-[120px] text-[50px] lg:w-[70%] leading-[100%] font-[500]'>
-        Welcome to my world
-      </h1>
-      <br />
-      <p className='sm:text-[56px] text-[26px] my-5 text-right xl:pl-40 font-[250]'>
-        I'm Narendra, a passionate and aspiring Full Stack Developer. Excited to
-        embark on a journey of creating innovative digital experiences.
-      </p>
-      <br />
-      <button
-        onClick={onExploreClick}
-        className="sm:text-[25px] items-center sm:w-[400px] w-[260px] flex uppercase sm:px-8 px-6 sm:py-6 py-4 rounded-full text-[17px] welcome-btn font-semibold"
-        disabled={loading}
-      >
-        {loading ? (
-          <>Loading...</>
-        ) : (
-          <>
-            Explore My World <FaArrowRight className='arrow-right sm:w-5 w-3' />
-          </>
-        )}
-      </button>
-    </div>
+    showWelcome && renderGuideModal()
   );
 };
 

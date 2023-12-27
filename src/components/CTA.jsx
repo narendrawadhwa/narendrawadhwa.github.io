@@ -16,7 +16,7 @@ const CTA = () => {
       </div>
       <hr className='my-6 border-slate-300'/>
 
-      <div className='flex space-x-4 sm:justify-between items-center sm:flex-row flex-col gap-3 '>
+      <div className='flex space-x-4 sm:justify-between items-center sm:flex-row flex-col-reverse gap-3 '>
         <div>
         <p className='sm:text-[20px] text-[16px] text-center'>Crafted by Narendra Wadhwa | {" "}
         <br className='sm:hidden'/>© 2023 All rights reserved.</p>

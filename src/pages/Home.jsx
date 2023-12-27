@@ -7,30 +7,22 @@ import Plane from '../models/Plane';
 import Sky from '../models/Sky';
 import HomeInfo from "../components/HomeInfo";
 import Welcome from "../components/Welcome";  
-const images = import("../assets/images");
-// const arrowleft = await images.then((module) => module.arrowleft);
-
 import { OrbitControls } from "@react-three/drei";
-
 import sakura from '../assets/sakura.mp3';
 import { soundoff, soundon } from "../assets/icons";
-import { arrows } from "../assets/images";
 
-const icons = import("../assets/icons");
-const dragAnimationIcon = await icons.then((module) => module.drag_animation);
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
-  audioRef.current.volume = 0.4;
+  audioRef.current.volume = 0.6;
   audioRef.current.loop = true;
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
-  // const [showWelcome, setShowWelcome] = useState(true); 
   const [showGuide, setShowGuide] = useState(true);
   const [guideStep, setGuideStep] = useState(1);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
-
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  
 
   const handleNextStep = () => {
     setGuideStep((prevStep) => prevStep + 1);
@@ -44,24 +36,15 @@ const Home = () => {
     setShowGuide(false);
   };
 
-   useEffect(() => {
-  if (isPlayingMusic) {
-    audioRef.current.play();
-  }
+  useEffect(() => {
+    if (isPlayingMusic) {
+      audioRef.current.play();
+    }
 
-  return () => {
-    audioRef.current.pause();
-  };
-}, [isPlayingMusic]);;
-
-  // const handleExploreClick = () => {
-  //   setShowWelcome(false);
-  //   setIsRotating(false); 
-  // };
-
-  // if (showWelcome) {
-  //   return <Welcome onExploreClick={handleExploreClick} />;
-  // }
+    return () => {
+      audioRef.current.pause();
+    };
+  }, [isPlayingMusic]);
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -94,127 +77,76 @@ const Home = () => {
   const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
-
-  const renderGuideModal = () => {
-    const isLastStep = guideStep === 2; 
-  
-    return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center text-center">
-      <div className="bg-white p-6 rounded-lg flex flex-col justify-between sm:min-w-[450px] max-w-[320px] bg-opacity-95">
-          {guideStep === 1 && 
-          <>
-          <p className="font-semibold mb-3">
-            Step 1
-</p>
-<span className="flex flex-row items-center justify-center">
-<img src={dragAnimationIcon} className="w-20 mr-2" /> <p>OR</p> 
-{/* <img src={arrowleft} className="w-10 ml-3" />
-<img src={arrowright} className="w-10 ml-1" /> */}
-<img src={arrows} alt="" className="w-32" />
-</span>
-<p className="mt-3 mb-1 sm:text-[20px] text-[16px]"> Drag or press arrow left/right buttons to explore.</p>
-</>
-}
-          {guideStep === 2 && <p>
-            <span className='text-blue-500 font-semibold'>
-            Step 2: {" "}
-        </span> Explore the 3D world.</p>}
-  
-          <div className="flex justify-between mt-4">
-            <div>
-            <button
-              onClick={handlePrevStep}
-                  className="text-blue-500 p-1"
-              disabled={guideStep === 1}
-            >
-              Prev
-            </button>
-
-              {isLastStep ? (
-                <button onClick={handleSkip} className="text-gray-500 mr-2">
-                  Close
-                </button>
-              ) : (
-                <button
-                  onClick={handleNextStep}
-                  className="text-blue-500 px-4 py-1"
-                >
-                  Next
-                </button>
-              )}
-              </div>
-              {!isLastStep && (
-                <button onClick={handleSkip} className="text-gray-500 mr-2 ">
-                  Skip
-                </button>
-              )}
-          </div>
-        </div>
-      </div>
-    );
-  };
-  
-
-
   return (
     <section className='w-full h-screen relative'>
       <div className='absolute top-20 left-0 right-0 z-10 flex items-center justify-center'>
-      {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
+        {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
       </div>
 
-      {showGuide && renderGuideModal()}
+      <Welcome
+        showWelcome={showGuide}
+        setShowWelcome={setShowGuide}
+        handlePrevStep={handlePrevStep}
+        handleNextStep={handleNextStep}
+        handleSkip={handleSkip}
+        isLastStep={guideStep === 2}
+        guideStep={guideStep}
+      />
 
-      <Canvas
-  className={`w-full h-screen bg-transparent ${
-    (isRotating && !showGuide) ? "cursor-grabbing" : "cursor-grab"
-  }`}
-  camera={{ near: 0.1, far: 1000 }}
+<Canvas
+className={`w-full h-screen bg-transparent ${
+(isRotating && !showGuide) ? "cursor-grabbing" : "cursor-grab"
+}`}
+childrenamera={{ near: 0.1, far: 1000 }}
 >
-        <Suspense fallback={<Loader />}>
-          <directionalLight position={[1, 1, 1]} intensity={2} />
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 5, 10]} intensity={2} />
-          <spotLight
-            position={[0, 50, 10]}
-            angle={0.15}
-            penumbra={1}
-            intensity={2}
-          />
-          <hemisphereLight
-            skyColor='#b1e1ff'
-            groundColor='#000000'
-            intensity={1}
-          />
-           <OrbitControls
-            enableZoom={true}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-            maxDistance={7}
-            // onDragStart={handleExploreClick}
+<Suspense fallback={<Loader />}>
+<directionalLight position={[1, 1, 1]} intensity={2} />
+<ambientLight intensity={0.5} />
+<pointLight position={[10, 5, 10]} intensity={2} />
+<spotLight
+position={[0, 50, 10]}
+angle={0.15}
+penumbra={1}
+intensity={2}
+/>
+<hemisphereLight
+ skyColor='#b1e1ff'
+groundColor='#000000'
+intensity={1}
+/>
+<OrbitControls
+enableZoom={true}
+maxPolarAngle={Math.PI / 2}
+minPolarAngle={Math.PI / 2}
+maxDistance={7}
+// onDragStart={handleExploreClick}
 
-          />
+/>
           <Bird />
-          <Sky isRotating={isRotating} />
-          <Island
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-            setCurrentStage={setCurrentStage}
-            position={islandPosition}
+         <Sky isRotating={isRotating} />
+         <Island
+     isRotating={isRotating}
+           setIsRotating={setIsRotating}
+     setCurrentStage={setCurrentStage}
+        position={islandPosition}
             rotation={[0.1, 4.7077, 0]}
-            scale={islandScale}
-          />
-          <Plane
-            isRotating={isRotating}
-            position={biplanePosition}
-            rotation={[0, 20, 0]}
-            scale={biplaneScale}
-          />
-        </Suspense>
-      </Canvas>
+          scale={islandScale}
+     />
+     <Plane
+          isRotating={isRotating}
+       position={biplanePosition}
+ rotation={[0, 20, 0]}
+ scale={biplaneScale}
+/>
+</Suspense>
+ </Canvas>
       <div className="absolute sm:bottom-8 bottom-20 left-8">
-        <img src={isPlayingMusic ? soundon : soundoff} alt="sound"
-        className="w-10 h-10 cursor-pointer object-contain"
-        onClick={()=>setIsPlayingMusic(!isPlayingMusic)} />
+        <img
+          src={isPlayingMusic ? soundon : soundoff}
+          alt="sound"
+          className="w-10 h-10 cursor-pointer object-contain"
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
       </div>
     </section>
   );
