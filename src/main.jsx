@@ -1,10 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
+const React = require('react');
+const ReactDOM = require('react-dom');
+const App = require('./App.jsx');
+require('./index.css');
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+  React.createElement(React.StrictMode, null, React.createElement(App, null))
+);
