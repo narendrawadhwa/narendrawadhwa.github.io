@@ -6,5 +6,6 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb', '**/*.jsx'],
   base: '/3D_Portfolio_App/',
+  outDir: 'dist',
 
 })
