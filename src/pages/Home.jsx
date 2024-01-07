@@ -7,22 +7,25 @@ import Plane from '../models/Plane';
 import Sky from '../models/Sky';
 import HomeInfo from "../components/HomeInfo";
 import Welcome from "../components/Welcome";  
+import * as THREE from 'three';
+
+
 import { OrbitControls } from "@react-three/drei";
+
 import sakura from '../assets/sakura.mp3';
 import { soundoff, soundon } from "../assets/icons";
 
-
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
-  audioRef.current.volume = 0.6;
+  audioRef.current.volume = 0.4;
   audioRef.current.loop = true;
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [showGuide, setShowGuide] = useState(true);
   const [guideStep, setGuideStep] = useState(1);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
-  
+  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
+
 
   const handleNextStep = () => {
     setGuideStep((prevStep) => prevStep + 1);
@@ -36,15 +39,17 @@ const Home = () => {
     setShowGuide(false);
   };
 
-  useEffect(() => {
-    if (isPlayingMusic) {
-      audioRef.current.play();
-    }
+   useEffect(() => {
+  if (isPlayingMusic) {
+    audioRef.current.play();
+  }
 
-    return () => {
-      audioRef.current.pause();
-    };
-  }, [isPlayingMusic]);
+  return () => {
+    audioRef.current.pause();
+  };
+}, [isPlayingMusic]);;
+
+
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -77,10 +82,13 @@ const Home = () => {
   const [biplaneScale, biplanePosition] = adjustBiplaneForScreenSize();
   const [islandScale, islandPosition] = adjustIslandForScreenSize();
 
+
+
+
   return (
     <section className='w-full h-screen relative'>
       <div className='absolute top-20 left-0 right-0 z-10 flex items-center justify-center'>
-        {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
+      {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
       </div>
 
       <Welcome
@@ -93,60 +101,56 @@ const Home = () => {
         guideStep={guideStep}
       />
 
-<Canvas
-className={`w-full h-screen bg-transparent ${
-(isRotating && !showGuide) ? "cursor-grabbing" : "cursor-grab"
-}`}
-childrenamera={{ near: 0.1, far: 1000 }}
+      
+      <Canvas
+  className={`w-full h-screen bg-transparent ${
+    (isRotating && !showGuide) ? "cursor-grabbing" : "cursor-grab"
+  }`}
+  camera={{ near: 0.1, far: 1000 }}
 >
-<Suspense fallback={<Loader />}>
-<directionalLight position={[1, 1, 1]} intensity={2} />
-<ambientLight intensity={0.5} />
-<pointLight position={[10, 5, 10]} intensity={2} />
-<spotLight
-position={[0, 50, 10]}
-angle={0.15}
-penumbra={1}
-intensity={2}
-/>
-<hemisphereLight
- skyColor='#b1e1ff'
-groundColor='#000000'
-intensity={1}
-/>
-<OrbitControls
-enableZoom={true}
-maxPolarAngle={Math.PI / 2}
-minPolarAngle={Math.PI / 2}
-maxDistance={7}
-// onDragStart={handleExploreClick}
-
-/>
+        <Suspense fallback={<Loader />}>
+          <directionalLight position={[1, 1, 1]} intensity={2} />
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 5, 10]} intensity={2} />
+          <spotLight
+            position={[0, 50, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={2}
+          />
+          <hemisphereLight
+            skyColor='#b1e1ff'
+            groundColor='#000000'
+            intensity={1}
+          />
+           <OrbitControls
+            enableZoom={true}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+            maxDistance={7}
+          />
           <Bird />
-         <Sky isRotating={isRotating} />
-         <Island
-     isRotating={isRotating}
-           setIsRotating={setIsRotating}
-     setCurrentStage={setCurrentStage}
-        position={islandPosition}
+          <Sky isRotating={isRotating} />
+          <Island
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
+            setCurrentStage={setCurrentStage}
+            position={islandPosition}
             rotation={[0.1, 4.7077, 0]}
-          scale={islandScale}
-     />
-     <Plane
-          isRotating={isRotating}
-       position={biplanePosition}
- rotation={[0, 20, 0]}
- scale={biplaneScale}
-/>
-</Suspense>
- </Canvas>
+            scale={islandScale}
+          />
+          <Plane
+            isRotating={isRotating}
+            position={biplanePosition}
+            rotation={[0, 20, 0]}
+            scale={biplaneScale}
+          />
+        </Suspense>
+      </Canvas>
       <div className="absolute sm:bottom-8 bottom-20 left-8">
-        <img
-          src={isPlayingMusic ? soundon : soundoff}
-          alt="sound"
-          className="w-10 h-10 cursor-pointer object-contain"
-          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
-        />
+        <img src={isPlayingMusic ? soundon : soundoff} alt="sound"
+        className="w-10 h-10 cursor-pointer object-contain"
+        onClick={()=>setIsPlayingMusic(!isPlayingMusic)} />
       </div>
     </section>
   );

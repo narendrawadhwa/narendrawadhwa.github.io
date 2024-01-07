@@ -37,16 +37,6 @@ const Projects = () => {
               <p className="mt-2 text-slate-500">
                 {project.description}
               </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-          {project.skills.map((skill, index) => (
-            <div
-            key={index}
-            className={`text-white sm:text-[16px] text-[13px] rounded-full py-[0.5rem] px-3 ${project.theme}`}
-            >
-            {skill}
-            </div>
-          ))}
-        </div>
               <div className="mt-5 flex items-center gap-2 font-poppins link">
                 <Link
                   to={project.link}

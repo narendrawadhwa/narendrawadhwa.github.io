@@ -1,6 +1,6 @@
-import {arrows, clickLink} from '../assets/images';
+import React from 'react';
 import { drag_animation } from '../assets/icons';
-
+import { arrows, clickLink } from '../assets/images';
 const Welcome = ({ showWelcome, handlePrevStep, handleNextStep, handleSkip, isLastStep, guideStep }) => {
   const renderGuideModal = () => {
     return (

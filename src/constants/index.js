@@ -1,34 +1,35 @@
-import{ codsoft, inderdeep }from "../assets/images";
 
 import {
-  contact,
-  css,
-  express,
-  git,
-  github,
-  html,
-  javascript,
-  linkedin,
-  mongodb,
-  motion,
-  mui,
-  nodejs,
-  jobportal,
-  react,
-  redux,
-  summiz,
-  tailwindcss,
-  threads,
-  typescript,
-  java,
-  dsa,
-  mysql,
-  emailjs,
-  movieticket,
-  eshop,
-} from "../assets/icons";
+    codsoft, inderdeep
+} from '../assets/images';
 
-
+import {
+contact,
+css,
+express, 
+git,
+html,
+javascript, 
+linkedin,
+mongodb,
+motion,
+mui,
+nodejs,
+jobportal,
+react,
+redux,
+summiz,
+tailwindcss,
+threads,
+typescript,
+java,
+dsa,
+mysql,
+emailjs,
+movieticket,
+eshop, 
+github
+} from '../assets/icons';
 
 export const skills = [
     {
@@ -172,7 +173,6 @@ export const projects = [
         iconUrl: jobportal,
         theme: 'btn-back-red',
         name: 'HireSync Central',
-        skills: ["React.js", "Node.js", "Express.js", "MongoDB","Material UI", "JWT", "Redux"],
         description: 'Engineered a robust HireSync Central (a Full Stack Job Portal) with seamless user interfaces for registration, login, job exploration, and applications for job seekers and employers. Efficiently integrated category and location filtering.',
         link: 'https://github.com/narendrawadhwa/CodSoft/tree/main/job-board',
     },
@@ -180,7 +180,6 @@ export const projects = [
         iconUrl: threads,
         theme: 'btn-back-green',
         name: 'Mystic Krishna Reverence',
-        skills: ["HTML", "CSS", "JavaScript", "MongoDB"],
         description: 'Created a heartfelt tribute to Lord Krishna, covering his iconography, life events, key figures, festivals and 108 names from the Sahastranama with a flute-shaped cursor and background flute music.',
         link: 'https://github.com/narendrawadhwa/CodSoft/tree/main/tribute-page'
     },
@@ -188,7 +187,6 @@ export const projects = [
         iconUrl: movieticket,
         theme: 'btn-back-blue',
         name: 'CineCore Engine',
-        skills: ["Node.js", "Express.js", "MongoDB"],
         description: 'Developed the Backend Engine for CineCore, a robust backend system that empowers users to seamlessly explore upcoming and released movies. Allowing users to efficiently filter released movies, access comprehensive details including genres, artists, and trailers and seamless booking of movie tickets.',
         link: 'https://github.com/narendrawadhwa/backend-project',
     },
@@ -196,7 +194,6 @@ export const projects = [
         iconUrl: eshop,
         theme: 'btn-back-pink',
         name: 'InfinityCart Bazaar',
-        skills: ["React.js", "Material UI"],
         description: 'Designed and implemented an engaging frontend for InfinityCart Bazaar (an E-commerce site), seamlessly connected with a powerful backend. The interfaces include user-friendly login/signup, product showcases, detailed product information, and an efficient order creation process. ',
         link: 'https://github.com/narendrawadhwa/eshop-project',
     },
@@ -204,7 +201,6 @@ export const projects = [
         iconUrl: summiz,
         theme: 'btn-back-yellow',
         name: 'InkVoyage',
-        skills: ["HTML", "CSS"],
         description: 'Crafted an engaging blog project with a user-friendly homepage, create blog, edit blog, and blogs page. The platform includes interactive features for commenting and liking, enhancing the overall user experience.',
         link: 'https://github.com/narendrawadhwa/upgradproject',
     }
