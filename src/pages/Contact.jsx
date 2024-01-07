@@ -73,16 +73,16 @@ const Contact = () => {
   };
 
   return (
-    <section className='relative flex lg:flex-row flex-col max-container h-[100vh]'>
+    <section className='relative flex lg:flex-row flex-col max-container min-h-[100vh] sm:px-16'>
       {alert.show && <Alert {...alert} />}
 
-      <div className='flex-1 min-w-[50%] flex flex-col'>
+      <div className='flex-1 min-w-[50%] flex flex-col '>
         <h1 className='head-text'>Get in Touch</h1>
 
         <form
           ref={formRef}
           onSubmit={handleSubmit}
-          className='w-full flex flex-col gap-7 mt-14'
+          className='w-full flex flex-col gap-7 mt-11'
         >
           <label className='text-black-500 font-semibold'>
             Name

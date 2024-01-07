@@ -8,12 +8,13 @@ import Sky from '../models/Sky';
 import HomeInfo from "../components/HomeInfo";
 import Welcome from "../components/Welcome";  
 import * as THREE from 'three';
-
+import { Html } from '@react-three/drei';
 
 import { OrbitControls } from "@react-three/drei";
 
 import sakura from '../assets/sakura.mp3';
 import { soundoff, soundon } from "../assets/icons";
+import { ScaleLoader } from "react-spinners";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));
@@ -23,6 +24,7 @@ const Home = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
   const [showGuide, setShowGuide] = useState(true);
+  const [loading, setLoading] = useState(true);
   const [guideStep, setGuideStep] = useState(1);
   const [isPlayingMusic, setIsPlayingMusic] = useState(true);
 
@@ -50,6 +52,13 @@ const Home = () => {
 }, [isPlayingMusic]);;
 
 
+useEffect(() => {
+  const delayTimer = setTimeout(() => {
+    setLoading(false);
+  }, 500);
+
+  return () => clearTimeout(delayTimer);
+}, []);
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
@@ -87,6 +96,12 @@ const Home = () => {
 
   return (
     <section className='w-full h-screen relative'>
+       {loading ? (
+        <div className='wow-loader-container'>
+        <ScaleLoader size={50} color='#0072ff' />
+      </div>
+      ) : (
+        <>
       <div className='absolute top-20 left-0 right-0 z-10 flex items-center justify-center'>
       {currentStage && <HomeInfo currentStage={currentStage} showGuide={showGuide} />}
       </div>
@@ -147,11 +162,13 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
-      <div className="absolute sm:bottom-8 bottom-20 left-8">
+      <div className="absolute sm:bottom-8 bottom-24 left-8">
         <img src={isPlayingMusic ? soundon : soundoff} alt="sound"
-        className="w-10 h-10 cursor-pointer object-contain"
+        className="sm:w-10 w-12 sm:h-10 h-12 cursor-pointer object-contain"
         onClick={()=>setIsPlayingMusic(!isPlayingMusic)} />
       </div>
+      </>
+      )}
     </section>
   );
 };

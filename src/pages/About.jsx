@@ -4,13 +4,31 @@ import 'react-vertical-timeline-component/style.min.css';
 
 import { skills,experiences} from '../constants'
 import CTA from "../components/CTA";
+import { useState, useEffect } from 'react';
+import { ScaleLoader } from 'react-spinners';
 
 
 
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const delayTimer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  
+    return () => clearTimeout(delayTimer);
+  }, []);
+
   return (
     <section className='max-container'>
+       {loading ? (
+        <div className='wow-loader-container'>
+        <ScaleLoader size={50} color='#0072ff' />
+      </div>
+      ) : (
+        <>
     <h1 className='head-text'>
     Hello, I'm{" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
@@ -19,8 +37,8 @@ const About = () => {
         </span>
       </h1>
 
-      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p>
+      <div className='mt-5 flex flex-col gap-3 text-slate-500 '>
+        <p className='sm:text-[20px] text-[16px]'>
         A passionate and aspiring Full Stack Developer. Excited to embark on a journey of creating innovative digital experiences.
         </p>
       </div>
@@ -47,7 +65,7 @@ const About = () => {
   Work Experience
 </h3>
    <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p>
+   <p className='sm:text-[20px] text-[16px]'>
         Recent graduate with a passion for Full Stack Development, seeking opportunities to contribute and grow with one internship experience.
         </p>
       </div>
@@ -99,6 +117,8 @@ const About = () => {
         <hr className='border-slate-300'/>
         <CTA/>
       </div>
+      </>
+      )}
     </section>
   )
 }

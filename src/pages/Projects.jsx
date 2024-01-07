@@ -2,19 +2,36 @@ import { arrow } from "../assets/icons";
 import { projects } from "../constants";
 import { Link } from "react-router-dom";
 import CTA from "../components/CTA";
+import { useState, useEffect } from 'react';
+import { ScaleLoader } from 'react-spinners';
 
 const Projects = () => {
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    const delayTimer = setTimeout(() => {
+      setLoading(false);
+    }, 500);
+  
+    return () => clearTimeout(delayTimer);
+  }, []);
   return (
     <section className='max-container'>
+      {loading ? (
+        <div className='wow-loader-container'>
+        <ScaleLoader size={50} color='#0072ff' />
+      </div>
+      ) : (
+        <>
       <h1 className='head-text'>
         My        <span className='blue-gradient_text font-semibold drop-shadow'>
           Projects
         </span>
       </h1>
 
-      <div className='mt-5 flex flex-col gap-3 text-slate-500'>
-        <p>
-          In my journey, I've engineered five distinctive projects, a trio born during the immersive Full Stack Development program, showcasing my mastery in various technologies. Elevating the experience, my internship yielded two impactful creations. These endeavors encapsulate my commitment to delivering excellence in every venture.
+      <div className='mt-5 flex flex-col gap-3 text-slate-500 '>
+      <p className='sm:text-[20px] text-[15px]'>
+          In my journey, I've engineered six distinctive projects, a trio born during the immersive Full Stack Development program, showcasing my mastery in various technologies. Elevating the experience, my internship yielded two impactful creations. These endeavors encapsulate my commitment to delivering excellence in every venture.
         </p>
       </div>
 
@@ -31,10 +48,10 @@ const Projects = () => {
               </div>
             </div>
             <div className="mt-5 flex flex-col">
-              <h4 className="text-2xl font-poppins font-semibold">
+              <h4 className="text-[1.25rem] font-poppins font-semibold">
                 {project.name}
               </h4>
-              <p className="mt-2 text-slate-500">
+              <p className="mt-2 text-slate-500 sm:text-[18px] text-[16px]">
                 {project.description}
               </p>
               <div className="mt-5 flex items-center gap-2 font-poppins link">
@@ -42,7 +59,8 @@ const Projects = () => {
                   to={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-blue-600">
+                  className="font-semibold text-blue-600
+                  sm:text-[18px] text-[16px]">
                   Live link
                 </Link>
                 <img
@@ -56,6 +74,8 @@ const Projects = () => {
       </div>
       <hr className="border-slate-200" />
       <CTA />
+      </>
+      )}
     </section>
   )
 }
