@@ -45,7 +45,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
         <p className='font-medium text-center sm:text-[18px] text-[14px]'>
           During the program i worked on three projects using various technologies.</p>
 
-        <Link to='/projects' className='neo-brutalism-white neo-btn'>
+        <Link to='/3D_Portfolio_App/projects' className='neo-brutalism-white neo-btn'>
           Projects
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain arrow-img' />
         </Link>
@@ -72,7 +72,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
         <p className='font-medium sm:text-[18px] text-[14px] text-center'>
           I interned at CodSoft as a Web Development Intern, worked on two  projects gaining hands-on experience</p>
 
-        <Link to='/projects' className='neo-brutalism-white neo-btn'>
+        <Link to='/3D_Portfolio_App/projects' className='neo-brutalism-white neo-btn'>
           Projects
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain arrow-img' />
         </Link>
@@ -100,7 +100,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
           Need a project done or looking for a dev?  I'm just a few keystrokes away
         </p>
 
-        <Link to='/contact' className='neo-brutalism-white neo-btn'>
+        <Link to='/3D_Portfolio_App/contact' className='neo-brutalism-white neo-btn'>
           Let's talk
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain arrow-img' />
         </Link>
