@@ -5,8 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import * as THREE from 'three';
-import Spinners from './components/Spinners';
+import NotFound from './pages/NotFound';
 
 
 const App = () => {
@@ -24,9 +23,9 @@ const App = () => {
             }
           />          
           <Route path="/3D_Portfolio_App/about" element={<About />} />
-          <Route path="/3D_Portfolio_App/spinners" element={<Spinners />} />
           <Route path="/3D_Portfolio_App/projects" element={<Projects />} />
           <Route path="/3D_Portfolio_App/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </main>

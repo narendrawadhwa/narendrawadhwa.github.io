@@ -25,7 +25,7 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto pb-12 !pt-[126px] sm:px-12 lg:px-20 px-9 min-h-[calc(100vh-80px)];
+    @apply mx-auto pb-12 !pt-[126px] sm:px-12 lg:px-24 px-9 min-h-[calc(100vh-80px)];
   }
 
   .head-text {
@@ -53,7 +53,7 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .header {
-    @apply flex justify-between items-center px-4 sm:py-2 py-4 my-0 max-w-[95%] mx-5 absolute top-0 sm:bg-transparent z-10 right-0 left-0;
+    @apply flex justify-between items-center px-3 sm:py-2 py-4 my-0 max-w-[95%] mx-5 absolute top-0 sm:bg-transparent z-10 right-0 left-0;
   }
 
   .footer {
@@ -65,14 +65,17 @@ body:has(.card[data-color="green"]:hover) {
   }
 
   .info-box {
-    @apply mx-3 relative flex text-white text-[15px] flex-col gap-2 max-w-[340px] sm:max-w-[370px] neo-brutalism-blue sm:top-0 top-8 pt-3 pb-7 px-3;
+    @apply mx-3 relative flex text-white flex-col gap-2 max-w-[340px] sm:max-w-[360px] neo-brutalism-blue sm:top-0 top-8 pt-3 pb-6 px-3;
   }
 
   .details-box {
     @apply text-center neo-brutalism-blue max-w-[310px] sm:max-w-[370px] py-3 px-4 text-white mx-4 sm:top-0 top-8;
   }
+  .details-box p, .info-box p {
+    @apply sm:text-[14px] text-[16px] text-center;
+  }
   .neo-btn {
-    @apply py-2 px-3 rounded-2xl text-blue-500 text-center font-semibold w-[80%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-3;
+    @apply py-2 text-[15px] px-3 rounded-3xl text-blue-500 text-center font-semibold w-[75%] -bottom-5 absolute mx-auto right-0 left-0 flex justify-center items-center gap-2;
   }
   
   .neo-btn .arrow-img {

@@ -8,7 +8,6 @@ import Sky from '../models/Sky';
 import HomeInfo from "../components/HomeInfo";
 import Welcome from "../components/Welcome";  
 import * as THREE from 'three';
-import { Html } from '@react-three/drei';
 
 import { OrbitControls } from "@react-three/drei";
 
@@ -26,7 +25,7 @@ const Home = () => {
   const [showGuide, setShowGuide] = useState(true);
   const [loading, setLoading] = useState(true);
   const [guideStep, setGuideStep] = useState(1);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
 
 
   const handleNextStep = () => {
@@ -65,7 +64,7 @@ useEffect(() => {
 
     if (window.innerWidth < 768) {
       screenScale = [1.5, 1.5, 1.5];
-      screenPosition = [0, -2, 0];
+      screenPosition = [0, -1.7, 0];
     } else {
       screenScale = [3, 3, 3];
       screenPosition = [0, -5, -4];
@@ -79,7 +78,7 @@ useEffect(() => {
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
-      screenPosition = [0, -8, -50.4];
+      screenPosition = [0, -6, -50.4]
     } else {
       screenScale = [1, 1, 1];
       screenPosition = [0, -8, -43.4];
@@ -98,7 +97,7 @@ useEffect(() => {
     <section className='w-full h-screen relative'>
        {loading ? (
         <div className='wow-loader-container'>
-        <ScaleLoader size={50} color='#0072ff' />
+        <ScaleLoader size={60} color='#0072ff' />
       </div>
       ) : (
         <>
@@ -163,10 +162,13 @@ useEffect(() => {
         </Suspense>
       </Canvas>
       <div className="absolute sm:bottom-8 bottom-24 left-8">
-        <img src={isPlayingMusic ? soundon : soundoff} alt="sound"
-        className="sm:w-10 w-12 sm:h-10 h-12 cursor-pointer object-contain"
-        onClick={()=>setIsPlayingMusic(!isPlayingMusic)} />
-      </div>
+            <img
+              src={isPlayingMusic ? soundon : soundoff}
+              alt="sound"
+              className="lg:w-9 w-12 lg:h-9 h-12 cursor-pointer object-contain"
+              onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+            />
+          </div>
       </>
       )}
     </section>

@@ -5,10 +5,10 @@ const Welcome = ({ showWelcome, handlePrevStep, handleNextStep, handleSkip, isLa
   const renderGuideModal = () => {
     return (
       <div className="fixed inset-0 z-50 flex items-center justify-center text-center">
-        <div className="bg-white p-6 rounded-lg flex flex-col justify-between sm:min-w-[400px] max-w-[320px] bg-opacity-90">
+        <div className="bg-white p-6 rounded-lg flex flex-col justify-between sm:min-w-[380px] max-w-[340px] bg-opacity-95">
           {guideStep === 1 && (
             <>
-              <p className="font-semibold mb-3">Step 1</p>
+              <p className="font-semibold text-[20px] mb-3">Step 1</p>
               <span className="flex flex-row items-center justify-center">
                 <img src={drag_animation} className="sm:w-16 w-20 mr-2" /> <p className='text-[18px]'>OR</p> 
                 <img src={arrows} alt="" className="sm:w-28 w-32" />
@@ -18,11 +18,11 @@ const Welcome = ({ showWelcome, handlePrevStep, handleNextStep, handleSkip, isLa
           )}
           {guideStep === 2 && (
             <>
-              <p className="font-semibold mb-3">Step 2</p>
+              <p className="font-semibold text-[20px] mb-3">Step 2</p>
               <span className="flex flex-row items-center justify-center">
                 <img src={clickLink} alt="" className="w-12" />
               </span>
-              <p className="mt-3 mb-1  text-[17px]"> Click hyperlinks for education certificates, projects, contact, and more.</p>
+              <p className="mt-3 mb-1 text-[17px]"> Click hyperlinks for education certificates, projects, contact, and more.</p>
             </>
           )}
           <div className="flex justify-between mt-4 text-[17px]">
