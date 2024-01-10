@@ -181,7 +181,7 @@ export const projects = [
         iconUrl: threads,
         theme: 'btn-back-green',
         name: 'Mystic Krishna Reverence',
-        skills: ["HTML", "CSS", "JavaScript", "MongoDB"],
+        skills: ["HTML", "CSS", "JavaScript"],
         description: 'Created a heartfelt tribute to Lord Krishna, covering his iconography, life events, key figures, festivals and 108 names from the Sahastranama with a flute-shaped cursor and background flute music.',
         link: 'https://github.com/narendrawadhwa/CodSoft/tree/main/tribute-page'
     },
