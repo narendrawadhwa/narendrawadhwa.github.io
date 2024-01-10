@@ -8,8 +8,8 @@ const Welcome = ({ showWelcome, handlePrevStep, handleNextStep, handleSkip, isLa
         <div className="bg-white p-6 rounded-lg flex flex-col justify-between sm:min-w-[380px] max-w-[340px] bg-opacity-95">
           {guideStep === 1 && (
             <>
-              <p className="font-semibold text-[20px] mb-3">Step 1</p>
-              <span className="flex flex-row items-center justify-center">
+              <p className="stepper-heading">Step 1</p>
+              <span className='flex flex-row items-center justify-center'>
                 <img src={drag_animation} className="sm:w-16 w-20 mr-2" /> <p className='text-[18px]'>OR</p> 
                 <img src={arrows} alt="" className="sm:w-28 w-32" />
               </span>
@@ -18,11 +18,11 @@ const Welcome = ({ showWelcome, handlePrevStep, handleNextStep, handleSkip, isLa
           )}
           {guideStep === 2 && (
             <>
-              <p className="font-semibold text-[20px] mb-3">Step 2</p>
-              <span className="flex flex-row items-center justify-center">
-                <img src={clickLink} alt="" className="w-12" />
+              <p className="stepper-heading">Step 2</p>
+              <span className='flex flex-row items-center justify-center'>
+                <img src={clickLink} alt="" className="lg:w-10 w-12" />
               </span>
-              <p className="mt-3 mb-1 text-[17px]"> Click hyperlinks for education certificates, projects, contact, and more.</p>
+              <p className="mt-3 mb-1 text-[17px]"> Click hyperlinks for education certificates, projects, etc.</p>
             </>
           )}
           <div className="flex justify-between mt-4 text-[17px]">
