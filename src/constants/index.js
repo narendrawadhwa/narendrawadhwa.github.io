@@ -205,7 +205,7 @@ export const projects = [
         iconUrl: summiz,
         theme: 'btn-back-yellow',
         name: 'InkVoyage',
-        skills: ["HTML", "CSS"],
+        skills: ["HTML", "CSS","JavaScript"],
         description: 'Crafted an engaging blog project with a user-friendly homepage, create blog, edit blog, and blogs page. The platform includes interactive features for commenting and liking, enhancing the overall user experience.',
         link: 'https://github.com/narendrawadhwa/upgradproject',
     }
