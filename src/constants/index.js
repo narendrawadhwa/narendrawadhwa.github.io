@@ -1,6 +1,6 @@
 
 import {
-    codsoft, inderdeep
+    codsoft
 } from '../assets/images';
 
 import {
@@ -12,7 +12,6 @@ html,
 javascript, 
 linkedin,
 mongodb,
-motion,
 mui,
 nodejs,
 jobportal,
@@ -66,11 +65,6 @@ export const skills = [
         imageUrl: mongodb,
         name: "MongoDB",
         type: "Database",
-    },
-    {
-        imageUrl: motion,
-        name: "Motion",
-        type: "Animation",
     },
     {
         imageUrl: mui,
@@ -137,17 +131,7 @@ export const experiences = [
         "Developed a Full Stack Job Portal project with a user-centric approach, benefiting job seekers and employers through a feature-rich platform.",        
       ],
     },
-    {
-      title: "Accounting Clerk",
-      company_name: "Inderdeep Construction Co.",
-      icon: inderdeep,
-      iconBg: "#05abf2",
-      date: "March 2020 - Nov 2020",
-      points: [
-      "Successfully maintained precise financial records, meticulously tracking transactions, invoices, and receipts.",
-      "Implemented rigorous proofreading procedures, ensuring error-free record-keeping and conducting in-depth report reviews to identify and rectify discrepancies.",
-      ],
-    },
+    
   ];
   
 export const socialLinks = [
