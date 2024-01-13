@@ -13,6 +13,8 @@ const Navbar = () => {
     <nav className='flex gap-7 text-[17px] font-medium'>
     <NavLink to='/3D_Portfolio_App/about' className={({isActive})=> isActive ? 'text-blue-500' : 'text-black' }>About</NavLink>
     <NavLink to='/3D_Portfolio_App/projects' className={({isActive})=> isActive ? 'text-blue-500' : 'text-black' }>Projects</NavLink>
+    <NavLink to='/3D_Portfolio_App/bts' className={({isActive})=> isActive ? 'text-blue-500' : 'text-black' }>BTS</NavLink>
+
     </nav>
 </header>  )
 }

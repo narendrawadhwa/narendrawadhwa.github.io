@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import CTA from "../components/CTA";
 import { useState, useEffect } from 'react';
 import Loading from '../components/Loading'
+import { motion } from "framer-motion";
 
 const Projects = () => {
   const [loading, setLoading] = useState(true);
@@ -21,7 +22,11 @@ const Projects = () => {
     <section className='max-container'>
       {loading ? (<Loading />
       ) : (
-        <>
+        <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
           <h1 className='head-text'>
             My  <span className='blue-gradient_text font-semibold drop-shadow'>Projects
             </span>
@@ -82,7 +87,7 @@ const Projects = () => {
           </div>
           <hr className="border-slate-200" />
           <CTA />
-        </>
+        </motion.div>
       )}
     </section>
   )

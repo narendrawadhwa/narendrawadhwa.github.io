@@ -1,8 +1,8 @@
 
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-
-import { skills, experiences } from '../constants'
+import { motion } from 'framer-motion';
+import { skills, experiences, education } from '../constants'
 import CTA from "../components/CTA";
 import { useState, useEffect } from 'react';
 import Loading from '../components/Loading';
@@ -27,7 +27,11 @@ const About = () => {
         <Loading />
 
       ) : (
-        <>
+        <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+>
           <h1 className='head-text'>
             Hello, I'm{" "}
             <span className='blue-gradient_text font-semibold drop-shadow'>
@@ -112,11 +116,65 @@ const About = () => {
               </VerticalTimeline>
             </div>
           </div>
+
+          <div className='py-16'>
+            <h3 className='subhead-text'>
+            Academic Background
+            </h3>
+            <div className='mt-5 flex flex-col gap-3 text-slate-500'>
+              <p className='sm:text-[20px] text-[16px]'>
+My academic journey has equipped me with the necessary skills to navigate the complexities of software development. Eager to apply my theoretical knowledge in a practical setting.              
+</p>
+            </div>
+            <div className="mt-12 flex">
+              <VerticalTimeline>
+                {education.map((education) => (
+                  <VerticalTimelineElement
+                    key={education.institute_name}
+                    date={education.date}
+                    iconStyle={{ background: education.iconBg }}
+                    icon={
+                      <div className='flex justify-center items-center w-full h-full'>
+                        <img
+                          src={education.icon}
+                          alt={education.institute_name}
+                          className='w-[85%] h-[85%] object-contain'
+                        />
+                      </div>
+                    }
+                    contentStyle={{
+                      borderBottom: "8px",
+                      borderStyle: "solid",
+                      borderBottomColor: education.iconBg,
+                      boxShadow: "none",
+                    }}
+                  >
+                    <div>
+                      <h3 className='text-black text-xl font-poppins'
+                        style={{ margin: 0 }}>
+                        {education.title}
+                      </h3>
+                      <p className='text-black-500 font-medium font-base' style={{ margin: '5px 0px' }}>
+                        {education.institute_name}
+                      </p>
+                    </div>
+                    <ul className='my-5 list-disc ml-5 space-y-2'>
+                      {education.points.map((point, index) => (
+                        <li key={`education-point-${index}`} className='text-black-500/80 font-normal pl-1 text-sm'>
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </VerticalTimelineElement>
+                ))}
+              </VerticalTimeline>
+            </div>
+          </div>
           <div>
             <hr className='border-slate-300' />
             <CTA />
           </div>
-        </>
+        </motion.div>
       )}
     </section>
   )

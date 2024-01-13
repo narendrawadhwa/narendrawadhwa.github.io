@@ -27,7 +27,11 @@ mysql,
 emailjs,
 movieticket,
 eshop, 
-github
+github,
+challenges,
+personalTouch,
+upgrad,
+kccollege,
 } from '../assets/icons';
 
 export const skills = [
@@ -134,6 +138,35 @@ export const experiences = [
     
   ];
   
+
+  export const education = [
+    {
+      title: "Full Stack Development",
+      institute_name: "UpGrad Campus",
+      icon: upgrad,
+      iconBg: "#F02F3F",
+      date: "Nov 2022 - Aug 2023",
+      points: [
+        "Completed three projects during the program.",
+        "Attained 94% score on the Employment Test.",  
+        "Learned technologies and concept of Java, JavaScript, HTML, CSS, MERN Stack, OOPs, Data Structures & Algorithm, etc",      
+      ],
+    },
+    {
+        title: "Bachelors of Commerce",
+        institute_name: "K.C. College",
+        icon: kccollege,
+        iconBg: "#384D9D",
+        date: "Nov 2020 - Aug 2023",
+        points: [
+          "Completed bachelors with major in Accounting and Finance with 9.74 CGPA.",
+          "Led and co-led the team of college at Hojamalo and Shaan Events securing 2nd Runner Up and Best PR trophy.",              
+          "Engaged in extracurricular activities such as Joule 9.0, Sindhiyat Je Vaaste, and Sindhi Circle.",  
+        ],
+      },
+  ];
+  
+
 export const socialLinks = [
     {
         name: 'Contact',
@@ -193,4 +226,37 @@ export const projects = [
         description: 'Crafted an engaging blog project with a user-friendly homepage, create blog, edit blog, and blogs page. The platform includes interactive features for commenting and liking, enhancing the overall user experience.',
         link: 'https://github.com/narendrawadhwa/upgradproject',
     }
+];
+
+export const bts = [
+    {
+        iconUrl: summiz,
+        theme: 'btn-back-yellow',
+        name: 'Vision',
+        description: ' In the vast landscape of digital resumes, a unique vision emerged. A YouTube exploration led me to a captivating 3D portfolio concept. While I sought guidance from a tutorial, the intricate details, from the innovative rotation to the background story, were shaped by my own creativity. What started as inspiration transformed into a bespoke creation.',
+      },
+      {
+        iconUrl: challenges,
+        theme: 'btn-back-red',
+        name: 'Challenges Faced',
+        description: "Venturing from a non-IT background introduced unique challenges. Sourcing the right resources and envisioning the user's perspective became a constant dance of trial and error. This project became my experimental ground, where I delved into cutting-edge technologies like Three.js, Vite, and Tailwind CSS. The deployment phase, marking my first React project deployment, became a week-long puzzle. White screens with errors were my companions until I deciphered the deployment code.",
+      },
+      {
+        iconUrl: personalTouch,
+        theme: 'btn-back-blue',
+        name: 'Personal Touch',
+        description: "For me, this portfolio is more than a digital resume; it's a symphony that represents me holistically. Each element underwent meticulous testing and refinement, ensuring not just comprehensiveness but visual allure. Devoting a month to this project allowed me to scrutinize every detail, making it seamlessly responsive across various devices.",
+      },
+      {
+        iconUrl: threads,
+        theme: 'btn-back-pink',
+        name: 'Learnings',
+        description: 'Beyond the tangible outcomes, this project became a profound learning experience. Three.js, and Tailwind CSS became my companions, expanding my skill set. Patience became a virtue, and time management an indispensable skill. Even on the busiest days, crafting this portfolio became a testament to unwavering determination.',
+      },
+      {
+        iconUrl: jobportal,
+        theme: 'btn-back-yellow',
+        name: 'Experience',
+        description: 'As a recent graduate and a fresher in the industry, I may not boast extensive experience, but I bring a wealth of knowledge and enthusiasm. Having completed seven projects, including this portfolio and the Full Stack job portal, I am eager to contribute my skills to a professional setting. My goal is to secure an opportunity that allows me to showcase my capabilities and further enhance my career trajectory.',
+      },
 ];

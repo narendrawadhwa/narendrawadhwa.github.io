@@ -6,6 +6,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
+import BTS from './pages/BTS';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
           <Route path="/3D_Portfolio_App/about" element={<About />} />
           <Route path="/3D_Portfolio_App/projects" element={<Projects />} />
           <Route path="/3D_Portfolio_App/contact" element={<Contact />} />
+          <Route path="/3D_Portfolio_App/bts" element={<BTS />} />
           <Route path="/3D_Portfolio_App/*" element={<NotFound />} />
         </Routes>
       </Router>

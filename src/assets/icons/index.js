@@ -25,7 +25,11 @@ import threads from './threads.svg'
 import arrow from './arrow.svg'
 import contact from './contact.svg'
 import soundon from './soundon.png'
-import soundoff from './soundoff.png'
+import soundoff from './soundoff.png';
+import challenges from './challenge.png'
+import personalTouch from './personalTouch.png'
+import upgrad from './upgrad.png'
+import kccollege from './kccollege.png'
 
 export {
     css,
@@ -55,5 +59,9 @@ export {
     soundon,
     soundoff,
     drag_animation,
-    eshop
+    eshop,
+    challenges,
+    personalTouch,
+    upgrad,
+    kccollege
 }
