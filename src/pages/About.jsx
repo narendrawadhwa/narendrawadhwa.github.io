@@ -4,30 +4,11 @@ import 'react-vertical-timeline-component/style.min.css';
 import { motion } from 'framer-motion';
 import { skills, experiences, education } from '../constants'
 import CTA from "../components/CTA";
-import { useState, useEffect } from 'react';
-import Loading from '../components/Loading';
-
-
-
 
 const About = () => {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const delayTimer = setTimeout(() => {
-      setLoading(false);
-    }, 500);
-
-    return () => clearTimeout(delayTimer);
-  }, []);
-
+ 
   return (
     <section className='max-container'>
-
-      {loading ? (
-        <Loading />
-
-      ) : (
         <motion.div
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
@@ -176,7 +157,6 @@ My academic journey has equipped me with the necessary skills to navigate the co
             <CTA />
           </div>
         </motion.div>
-      )}
     </section>
   )
 }
