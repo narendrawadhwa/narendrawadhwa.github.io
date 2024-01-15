@@ -11,6 +11,10 @@
   --green-rgb: 125 161 35;
 }
 
+/* *{
+  cursor: none;
+} */
+
 body {
   font-family: 'Space Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;}
@@ -25,7 +29,7 @@ body:has(.card[data-color="green"]:hover) {
 
 @layer utilities {
   .max-container {
-    @apply max-w-5xl mx-auto pb-12 !pt-[126px] sm:px-12 lg:px-24 px-10  min-h-[calc(100vh-80px)] ;
+    @apply max-w-5xl mx-auto pb-12 !pt-[126px] sm:px-12 lg:px-24 px-10 overflow-hidden min-h-[calc(100vh-80px)] ;
   }
 
   .head-text {
@@ -255,16 +259,41 @@ scale: 1.2;
 }
 
 
-/* Example for custom scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #4a5568;
+  background-color: #0072ff;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track {
   background-color: #cbd5e0;
+}
+
+
+.cursor{
+  background: transparent;
+  height: 40px;
+  border: 2px solid #0061ff;
+  width: 40px;
+  border-radius:50%;
+  position: fixed;
+  top:0;
+  left:0;
+  pointer-events:none;
+}
+
+.cursor::after{
+  content: "";
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  background: transparent;
+  border: 2px solid #0061ff;
+  border-radius: 50%;
+  opacity: 0.8;
+  top: -6px;
+  left: -6px;
 }

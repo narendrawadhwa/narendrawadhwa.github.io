@@ -8,6 +8,7 @@ import Loading from '../components/Loading'
 const BTS = () => {
   const [loading, setLoading] = useState(true);
 
+
   useEffect(() => {
     const delayTimer = setTimeout(() => {
       setLoading(false);
@@ -17,6 +18,9 @@ const BTS = () => {
   }, []);
 
 
+  
+
+
   return (
     <section className='max-container'>
       {loading ? (<Loading />
@@ -24,14 +28,15 @@ const BTS = () => {
 <motion.div
   initial={{ opacity: 0, y: 20 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5 }}
->          <h1 className='head-text'>
+  transition={{ duration: 0.6 }}
+>      
+                <h1  className='head-text'>
           Behind the<span className='blue-gradient_text font-semibold drop-shadow'> Scenes
             </span>
           </h1>
 
           <div className='mt-5 flex flex-col text-slate-500 '>
-            <p className='sm:text-[19px] text-[16px]'>
+            <p  className='sm:text-[19px] text-[16px]'>
             Embarking on the journey of creating my portfolio was not initially on my radar. I vividly recall my conversation 
             with the course counselor, where she emphasized the importance of building a digital resume during the 
             Full Stack program. At that moment, I underestimated its significance. However, as I delved deeper into the IT sector, 
@@ -52,12 +57,12 @@ const BTS = () => {
                       className="w-[55%] h-[55%] object-contain" />
                   </div>
                 </div>
-                <h4 className="subhead-text ml-5">
+                <h4  className="subhead-text ml-5">
                     {bts.name}
                   </h4>
                 </div>
                 <div className="mt-1 flex flex-col">
-                  <p className="mt-2 text-slate-500 sm:text-[19px] text-[16px]">
+                  <p  className="mt-2 text-slate-500 sm:text-[19px] text-[16px]">
                     {bts.description}
                   </p>
                 </div>
@@ -65,11 +70,11 @@ const BTS = () => {
             ))}
           </div>
           <div className='mt-0 mb-10 flex flex-col text-slate-500 '>
-            <p className='sm:text-[19px] text-[16px]'>
+            <p  className='sm:text-[19px] text-[16px]'>
             Dive into my digital universe and uncover the story of my journey into the tech realm. Navigate through
-            <Link to='/3D_Portfolio_App/about' className="text-blue-500"> my skills, educational milestones, professional experience</Link>, and a portfolio adorned with 
-            <Link to='/3D_Portfolio_App/projects' className="text-blue-500">diverse projects.</Link> Connect with me through the 
-            <Link to='/3D_Portfolio_App/contact' className="text-blue-500">contact form,</Link> and let's shape the future together.
+            <Link to='/about' className="text-blue-500"> my skills, educational milestones, professional experience</Link>, and a portfolio adorned with 
+            <Link to='/projects' className="text-blue-500">diverse projects.</Link> Connect with me through the 
+            <Link to='/contact' className="text-blue-500">contact form,</Link> and let's shape the future together.
 </p>
           </div>
 
@@ -77,7 +82,9 @@ const BTS = () => {
           <hr className="border-slate-200" />
           <CTA />
         </motion.div>
+        
       )}
+                 
     </section>
   )
 }

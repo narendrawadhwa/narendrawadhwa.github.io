@@ -44,7 +44,7 @@ const NotFound = () => {
                             <span className='py-3 px-8 text-white text-[18px] rounded-3xl font-medium' style={{
                                 background: 'linear-gradient(155deg, #6bd3f9, #00a6e0)',
                             }}>
-                                <Link to="/3D_Portfolio_App/">Explore My World</Link>
+                                <Link to="/">Explore My World</Link>
                             </span>
                         </div>
 
@@ -59,7 +59,7 @@ const NotFound = () => {
                         <span className='py-4 px-10 text-white text-[18px] rounded-[50px] font-medium' style={{
                             background: 'linear-gradient(155deg, #6bd3f9, #00a6e0)',
                         }}>
-                            <Link to="/3D_Portfolio_App/">Explore My World</Link>
+                            <Link to="/">Explore My World</Link>
                         </span>
                     </div>
                 </>)}

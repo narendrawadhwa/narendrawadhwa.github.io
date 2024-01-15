@@ -154,14 +154,14 @@ export const experiences = [
     },
     {
         title: "Bachelors of Commerce",
-        institute_name: "K.C. College",
+        institute_name: "K.C. College, Churchgate",
         icon: kccollege,
         iconBg: "#384D9D",
         date: "Nov 2020 - Aug 2023",
         points: [
           "Completed bachelors with major in Accounting and Finance with 9.74 CGPA.",
-          "Led and co-led the team of college at Hojamalo and Shaan Events securing 2nd Runner Up and Best PR trophy.",              
-          "Engaged in extracurricular activities such as Joule 9.0, Sindhiyat Je Vaaste, and Sindhi Circle.",  
+          "Led and co-led the team of college at Hojamalo and Shaan Events securing 2nd Runner Up and Best PR trophies.",              
+          "Participated as a volunteer in extracurricular activities like Joule 9.0, Sindhiyat Je Vaaste, and Sindhi Circle.",  
         ],
       },
   ];
@@ -171,7 +171,7 @@ export const socialLinks = [
     {
         name: 'Contact',
         iconUrl: contact,
-        link: '/3D_Portfolio_App/contact',
+        link: '/contact',
     },
     {
         name: 'GitHub',

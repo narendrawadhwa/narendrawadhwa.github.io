@@ -20,6 +20,7 @@ const Projects = () => {
 
   return (
     <section className='max-container'>
+
       {loading ? (<Loading />
       ) : (
         <motion.div

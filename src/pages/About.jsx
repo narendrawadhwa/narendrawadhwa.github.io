@@ -23,6 +23,7 @@ const About = () => {
 
   return (
     <section className='max-container'>
+
       {loading ? (
         <Loading />
 
