@@ -8,11 +8,24 @@ import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import BTS from './pages/BTS';
 import { motion } from 'framer-motion';
+import Loading from './components/Loading';
 
-const App = () => {  const [mousePosition, setMousePosition] = useState({
+const App = () => {  
+  const [loading, setLoading] = useState(true);
+
+ 
+    const [mousePosition, setMousePosition] = useState({
   x:0,
   y:0
 });
+
+useEffect(() => {
+  const delayTimer = setTimeout(() => {
+    setLoading(false);
+  }, 500);
+
+  return () => clearTimeout(delayTimer);
+}, []);
 
 useEffect(()=>{
 const mouseMove = e =>{
@@ -37,8 +50,14 @@ return ()=>{
   }
 
   return (
+    
     <main className='bg-slate-300/20 h-full '>
-      <motion.div className="cursor"
+      {loading ? (
+        <Loading />
+
+      ) : (
+        <>
+      <motion.div className="cursor lg:block hidden"
             variants={variants}
             animate="default"></motion.div>
       <Router>
@@ -58,6 +77,8 @@ return ()=>{
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
+      </>
+      )}
     </main>
   );
 };
