@@ -1,6 +1,6 @@
 
 import {
-    codsoft
+    codsoft, dsa_certificate, forage_certificate, typescript_certificate
 } from '../assets/images';
 
 import {
@@ -32,6 +32,10 @@ challenges,
 personalTouch,
 upgrad,
 kccollege,
+weather,
+nptel,
+linkedin_circle,
+forage,
 } from '../assets/icons';
 
 export const skills = [
@@ -166,6 +170,33 @@ export const experiences = [
       },
   ];
   
+  export const certificates = [
+    {
+      title: "Data Structures and Algorithms in Java",
+      institute_name: "NPTEL, IIT Kharagpur",
+      image: dsa_certificate,
+      icon: nptel,
+      iconBg: "#d68b28",
+      date: "Nov 2023",
+    },
+    {
+        title: "TypeScript Essential Training",
+        institute_name: "LinkedIn Learning",
+        image: typescript_certificate,
+        icon: linkedin_circle,
+        iconBg: "#2967b0",
+        date: "Sep 2023",
+      },
+      {
+        title: "Software Engineering Lite Job Stimulation",
+        institute_name: "JPMorgan Chase & Co, Forage",
+        image: forage_certificate,
+        icon: forage,
+        iconBg: "#478cd1",
+        date: "Sep 2023",
+      },
+  ];
+  
 
 export const socialLinks = [
     {
@@ -194,6 +225,14 @@ export const projects = [
         description: 'Engineered a robust HireSync Central (a Full Stack Job Portal) with seamless user interfaces for registration, login, job exploration, and applications for job seekers and employers. Efficiently integrated category and location filtering.',
         link: 'https://github.com/narendrawadhwa/CodSoft/tree/main/job-board',
       },
+      {
+        iconUrl: weather,
+        theme: 'btn-back-black',
+        name: 'WeatherWise',
+        skills: ["React.js", "TailwindCSS"],
+        description: 'Built Weather Forecasting Web App - a responsive app that offers that changes background dynamically based on the time of day. Having city-specific weather details and automatic updates with the Geolocation API, and offers a 5-day forecast with stylish design.',
+        link: 'https://narendrawadhwa.github.io/weather-forecasting/',
+      },
     {
         iconUrl: threads,
         theme: 'btn-back-green',
@@ -204,7 +243,7 @@ export const projects = [
     },
     {
         iconUrl: movieticket,
-        theme: 'btn-back-blue',
+        theme: 'btn-back-pink',
         name: 'CineCore Engine',
         skills: ["Node.js", "Express.js", "MongoDB"],
         description: 'Developed the Backend Engine for CineCore, a robust backend system that empowers users to seamlessly explore upcoming and released movies. Allowing users to efficiently filter released movies, access comprehensive details including genres, artists, and trailers and seamless booking of movie tickets.',
@@ -212,7 +251,7 @@ export const projects = [
     },
     {
         iconUrl: eshop,
-        theme: 'btn-back-pink',
+        theme: 'btn-back-blue',
         name: 'InfinityCart Bazaar',
         skills: ["React.js", "Material UI"],
         description: 'Designed and implemented an engaging frontend for InfinityCart Bazaar (an E-commerce site), seamlessly connected with a powerful backend. The interfaces include user-friendly login/signup, product showcases, detailed product information, and an efficient order creation process. ',
@@ -231,7 +270,7 @@ export const projects = [
 export const bts = [
     {
         iconUrl: summiz,
-        theme: 'btn-back-yellow',
+        theme: 'btn-back-black',
         name: 'Vision',
         description: ' In the vast landscape of digital resumes, a unique vision emerged. A YouTube exploration led me to a captivating 3D portfolio concept. While I sought guidance from a tutorial, the intricate details, from the innovative rotation to the background story, were shaped by my own creativity. What started as inspiration transformed into a bespoke creation.',
       },
