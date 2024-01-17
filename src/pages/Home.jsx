@@ -13,6 +13,7 @@ import { OrbitControls } from "@react-three/drei";
 
 import sakura from '../assets/sakura.mp3';
 import { soundoff, soundon } from "../assets/icons";
+import { ScaleLoader } from "react-spinners";
 
 const Home = () => {
   const audioRef = useRef(new Audio(sakura));

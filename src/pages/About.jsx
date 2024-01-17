@@ -2,7 +2,7 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { motion } from 'framer-motion';
-import { skills, experiences, education } from '../constants'
+import { skills, experiences, education, certificates } from '../constants'
 import CTA from "../components/CTA";
 
 const About = () => {
@@ -152,6 +152,39 @@ My academic journey has equipped me with the necessary skills to navigate the co
               </VerticalTimeline>
             </div>
           </div>
+          
+          <div className='py-16'>
+            <h3 className='subhead-text'>
+            Certifications
+            </h3>
+            <div className='mt-5 flex flex-col gap-3 text-slate-500'>
+              <p className='sm:text-[20px] text-[16px]'>
+              Showcasing my dedication to continuous learning in the dynamic tech world. More certifications coming soon! 
+              </p>
+            </div>
+            <div className='flex gap-7 my-10 justify-center flex-wrap'>
+              {certificates.map((certificate)=>(
+              <div className="bg-white rounded-md transform transition-transform hover:scale-105 cursor-pointer p-4 overflow-hidden shadow-md max-w-[95%] sm:max-w-[80%] md:max-w-[300px] lg:max-w-[360px] ">
+              <img
+                src={certificate.image}
+                alt={`${certificate.institute_name} Certificate`}
+                className="w-full object-contain rounded-md"
+              />
+              <div className='mt-4'>
+                <div className="flex mb-4 flex-row justify-between">
+                  <div className='w-[70%]'>
+                    <h3 className="text-[16px] font-semibold mb-2">{certificate.title}</h3>
+                    <p className='text-[15px]'>{certificate.institute_name}</p>
+                  </div>
+                  <div className='text-[15px]'>{certificate.date}</div>
+                </div>
+              </div>
+            </div>
+            
+              ))}
+            </div>
+          </div>
+
           <div>
             <hr className='border-slate-300' />
             <CTA />

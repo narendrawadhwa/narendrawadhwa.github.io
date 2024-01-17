@@ -22,8 +22,7 @@ const Projects = () => {
 
         <div className='mt-5 flex flex-col gap-3 text-slate-500 '>
           <p className='sm:text-[20px] text-[16px]'>
-            In my journey, I've engineered six distinctive projects, a trio born during the immersive Full Stack Development program, showcasing my mastery in various technologies. Elevating the experience, my internship yielded two impactful creations. These endeavors encapsulate my commitment to delivering excellence in every venture.
-          </p>
+In my journey, I've crafted seven distinctive projects, with three emerging during the immersive Full Stack Development program. Additionally, my internship resulted in two impactful creations, elevating the overall experience. These endeavors encapsulate my commitment to delivering excellence in every venture.          </p>
         </div>
 
         <div className="flex flex-wrap my-20 gap-16 ">
