@@ -29,7 +29,11 @@ import soundoff from './soundoff.png';
 import challenges from './challenge.png'
 import personalTouch from './personalTouch.png'
 import upgrad from './upgrad.png'
-import kccollege from './kccollege.png'
+import kccollege from './kccollege.png';
+import weather from './weather.png'
+import nptel from './nptel.png'
+import linkedin_circle from './linkedin.png'
+import forage from './forage.png'
 
 export {
     css,
@@ -63,5 +67,9 @@ export {
     challenges,
     personalTouch,
     upgrad,
-    kccollege
+    kccollege, 
+    weather,
+    nptel,
+    linkedin_circle, 
+    forage
 }
