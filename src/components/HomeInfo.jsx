@@ -54,7 +54,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
         <p className='font-medium text-center sm:text-[14px] text-[16px]'>
           In August 2023, i successfully graduated and completed FSD program with test score of 94%.
         </p>
-        <Link to='https://drive.google.com/file/d/1_FyuFZxpHJrp07lRCqf55P4omHezNvJP/view?usp=drive_link' className='neo-brutalism-white neo-btn' target='_blank'>
+        <Link to='https://drive.google.com/file/d/1OCdfE4wuSddUXwDMxz8iJq-mipHN0WA8/view?usp=sharing' className='neo-brutalism-white neo-btn' target='_blank'>
           View Certificate
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain arrow-img' />
         </Link>
