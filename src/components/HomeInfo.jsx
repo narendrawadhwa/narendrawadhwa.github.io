@@ -80,7 +80,7 @@ const HomeInfo = ({ currentStage, showGuide }) => {
       <div className='info-box'>
         <p className='font-medium  '>
           Currently seeking opportunities while enhancing my skills in AWS Fundamentals.
-          <Link to='https://drive.google.com/file/d/1OCdfE4wuSddUXwDMxz8iJq-mipHN0WA8/view?usp=drive_link' className='neo-brutalism-white neo-btn' target='_blank'>
+          <Link to='https://drive.google.com/file/d/1_Ggim6FEJMvBCcvQ1VHccplv_NBrSoUw/view?usp=drive_link' className='neo-brutalism-white neo-btn' target='_blank'>
             View Resume
             <img src={arrow} alt='arrow' className='w-4 h-4 object-contain arrow-img' />
           </Link> </p>
